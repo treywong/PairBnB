@@ -19,6 +19,15 @@ gem 'uglifier', '>= 1.3.0'
 # Use Figaro for Privacy Protection
 gem "figaro"
 
+# Use Clearance to create Sign in and Log in
+gem "clearance"
+
+# Use OAuth2 to access account without needing sign in all the time (need Clearance gem) 
+gem 'omniauth-google-oauth2'
+
+# Use Faker for listing
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
