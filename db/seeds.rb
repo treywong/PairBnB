@@ -10,7 +10,7 @@ user = {}
 user['password'] = 'asdf'
 ActiveRecord::Base.transaction do
 	20.times do
-		user['username'] = Faker::Name.username
+		user['username'] = Faker::Name.name
 		user['email'] = Faker::Internet.email
 
 		User.create(user)
@@ -24,8 +24,15 @@ User.all.each { |u| uids << u.id }
 ActiveRecord::Base.transaction do
 	40.times do
 		listing['name'] = Faker::App.name
-		
+		listing['address'] = Faker::Address.full_address
+		listing['price'] = Faker::Number.decimal(3,2)
+		listing['detail'] = Faker::Hipster.paragraph
 
+		listing['guest_number'] = rand(1..10)
+		listing['bed_number'] = rand(1..7)
+		listing['room_number'] = rand(0..5)
+		listing['bath_number'] = rand(0..3)
+		
 		listing['user_id'] = uids.sample
 
 		Listing.create(listing)
