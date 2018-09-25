@@ -1,0 +1,17 @@
+<h1><%= @listing.name %></h1>
+
+<% if current_user.id == @listing.user_id %>
+	<%= link_to 'Edit', listing_edit_path(@listing.id) %>
+	<%= link_to 'Delete', listing_destroy_path %>
+<% end %>
+
+<p><%= @listing.guest_number %> guests | <%= @listing.room_number %> rooms | <%= @listing.bed_number %> beds | <%= @listing.bath_number %> bath </p>
+
+<h2>Price: $<%= @listing.price %></h2>
+
+<h2>Location</h2>
+<p><%= @listing.address %></p>
+
+<h2>Description</h2>
+<p><%= @listing.detail %></p>
+

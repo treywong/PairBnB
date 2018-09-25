@@ -8,10 +8,13 @@
 
 user = {}
 user['password'] = 'asdf'
+image_box = Dir.glob("app/assets/images/*.jpg")
 ActiveRecord::Base.transaction do
 	20.times do
 		user['username'] = Faker::Name.name
 		user['email'] = Faker::Internet.email
+		user['role'] = ['admin','moderator','customer'].sample
+		user['image_profile'] = image_box.sample
 
 		User.create(user)
 	end

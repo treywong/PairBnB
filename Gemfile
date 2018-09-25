@@ -28,6 +28,19 @@ gem 'omniauth-google-oauth2'
 # Use Faker for listing
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
+# Use Kaminari for pagination
+gem 'kaminari'
+
+# Use  Carrierwave to upload image
+gem 'carrierwave'
+
+# Use Mini Magick to make image smaller
+gem 'mini_magick'
+
+
+
+
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

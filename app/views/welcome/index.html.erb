@@ -1,4 +1,22 @@
-<h1>Welcome#index</h1>
+<h1>Welcome <%= current_user.username %></h1>
 <p>Find me in app/views/welcome/index.html.erb</p>
+
+<% if signed_in? -%>
+	<%= image_tag current_user.image_profile.url, size: "50x50" %>
+<% end %>
+
+<hr>
+<h1>Your houses</h1>
+<% @listings.each do |list| %>
+	<a href="/listing/<%= list.id %>">
+		<h2><%= list.name %></h2>
+	</a>
+	<p><%= list.detail %></p>
+<% end %>
+
+<hr>
+
+<%= paginate @listings %>
+<%= page_entries_info @listings %>
 
 <%= link_to "Sign in with Google", "/auth/google_oauth2" %>

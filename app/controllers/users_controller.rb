@@ -13,8 +13,20 @@ class UsersController < Clearance::UsersController
 		end
 	end
 
+	def edit
+		@user = User.find_by(id: params[:id])
+	end
+
+	def update
+		@user = User.find_by(id: params[:id])
+		@user.update(user_params)
+		@user.save
+
+		redirect_to root_path
+	end
+
 	private
 		def user_params
-			params.require(:user).permit(:email, :password, :username)
+			params.require(:user).permit(:email, :image_profile, :username)
 		end
 end
