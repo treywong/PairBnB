@@ -11,6 +11,7 @@
       <%= link_to 'Home', root_path %> |
       <%= link_to 'All Listing', listing_path %> |
       <%= link_to 'Add New List', listing_new_path %> |
+      <%= link_to 'Your Reservations', reservation_path %> |
       <%= link_to 'Edit your profile', users_edit_path(current_user.id) %>
     <% else -%>
       <%= link_to t(".sign_in"), sign_in_path %>

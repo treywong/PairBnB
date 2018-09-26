@@ -1,0 +1,16 @@
+<h1>Reservation form</h1>
+<%= form_for @reservation, url: reservation_create_path(params[:id]) do |form| %>
+	<div class="date-field">
+	  <%= form.label :date_start %>
+	  <%= form.date_field :date_start %>
+	</div>
+
+	<div class="date-field">
+	  <%= form.label :date_end %>
+	  <%= form.date_field :date_end %>
+	</div>
+
+	<div class="submit-field">
+		<%= form.submit %>
+	</div>
+<% end %>

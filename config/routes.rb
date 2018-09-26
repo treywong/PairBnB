@@ -21,10 +21,16 @@ Rails.application.routes.draw do
 
   get "/listing" => "listing#index", as: "listing"
   get "/listing/new" => "listing#new", as: "listing_new"
+  post "/listing" => "listing#create", as: "listing_create"
   get "/listing/:id" => "listing#show"
   get "/listing/:id/edit" => "listing#edit", as: "listing_edit"
   patch "/listing/:id" => "listing#update", as: "listing_update"
   delete "/listing/:id" => "listing#destroy", as: "listing_destroy"
+
+  get "/reservation" => "reservation#index", as: "reservation"
+  get "/listing/:id/reservation/new" => "reservation#new", as: "reservation_new"
+  post "/listing/:id/reservation" => "reservation#create", as: "reservation_create"
+
   get 'welcome/index'
   root 'welcome#index'
 
