@@ -6,4 +6,5 @@
 	</a>
 	<p><%= reserve.listing.detail %></p>
 	<p>From <%= reserve.date_start %> to <%= reserve.date_end %></p>
+	<%= link_to 'Edit', reservation_edit_path( reserve.listing.id ) %>
 <% end %>

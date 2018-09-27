@@ -37,6 +37,12 @@ gem 'carrierwave'
 # Use Mini Magick to make image smaller
 gem 'mini_magick'
 
+# Use Braintree for payment transaction
+gem 'braintree'
+
+# Use Bootstrap for CSS framework
+gem 'bootstrap'
+
 
 
 

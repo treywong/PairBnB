@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'braintree/new'
   get 'edit/index'
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "clearance/sessions", only: [:create]
@@ -30,6 +31,10 @@ Rails.application.routes.draw do
   get "/reservation" => "reservation#index", as: "reservation"
   get "/listing/:id/reservation/new" => "reservation#new", as: "reservation_new"
   post "/listing/:id/reservation" => "reservation#create", as: "reservation_create"
+  get "/listing/:id/reservation/edit" => "reservation#edit", as: "reservation_edit"
+  patch "/listing/:id/reservation" => "reservation#update", as: "reservation_update"
+  
+  post 'braintree/checkout'=> "braintree#checkout", as: "braintree_checkout"
 
   get 'welcome/index'
   root 'welcome#index'
