@@ -33,9 +33,12 @@ Rails.application.routes.draw do
   post "/listing/:id/reservation" => "reservation#create", as: "reservation_create"
   get "/listing/:id/reservation/edit" => "reservation#edit", as: "reservation_edit"
   patch "/listing/:id/reservation" => "reservation#update", as: "reservation_update"
+  delete "/reservation/:id" => "reservation#delete", as: "reservation_destroy"
+  # post "/reservation/:id" => "reservation#delete", as: "reservation_delete"
   
   post 'braintree/checkout'=> "braintree#checkout", as: "braintree_checkout"
 
+  get "/reservation/:id/bookings/confirm" => "bookings#confirmation", as: "bookings_confirm"
   get 'welcome/index'
   root 'welcome#index'
 

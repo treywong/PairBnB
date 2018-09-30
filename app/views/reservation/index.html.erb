@@ -5,6 +5,10 @@
 		<h2><%= reserve.listing.name %></h2>
 	</a>
 	<p><%= reserve.listing.detail %></p>
+	<p>Total price: <%= reserve.total_price %></p>
 	<p>From <%= reserve.date_start %> to <%= reserve.date_end %></p>
-	<%= link_to 'Edit', reservation_edit_path( reserve.listing.id ) %>
+
+	<%= link_to 'Edit', reservation_edit_path( reserve.listing_id ) %>
+	<%= link_to 'Delete', reservation_destroy_path( reserve.id ), method: :delete, data: {confirm: "Are you sure?" } %>
+	<%= link_to "Make Payment", braintree_new_path %>
 <% end %>

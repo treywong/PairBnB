@@ -1,5 +1,5 @@
 <h1>Edit your list</h1>
-<%= form_for @listing, url: listing_update_path(@listing) do |form| %>
+<%= form_for @listing, url: listing_update_path(params[:id]) do |form| %>
 	<%= render partial: '/listing/form', object: form %>
 
 	<div class="submit-field">

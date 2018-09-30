@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   include Clearance::User
 
+
+  mount_uploader :image_profile, AvatarUploader
+  
   has_many :authentications, dependent: :destroy
   has_many :listings
   has_many :reservations

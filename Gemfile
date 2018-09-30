@@ -43,6 +43,11 @@ gem 'braintree'
 # Use Bootstrap for CSS framework
 gem 'bootstrap'
 
+# Use Sidekiq to push tasks into a queue for background worker into Redis database
+gem 'sidekiq'
+
+# Use Letter Opener to preview a letter instead of sending it
+gem "letter_opener", :group => :development
 
 
 

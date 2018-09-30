@@ -1,9 +1,7 @@
 <h1>Welcome <%= current_user.username %></h1>
 <p>Find me in app/views/welcome/index.html.erb</p>
 
-<% if signed_in? -%>
-	<%= image_tag current_user.image_profile.url, size: "50x50" %>
-<% end %>
+
 
 <hr>
 <h1>Your houses</h1>
@@ -20,4 +18,4 @@
 <%= page_entries_info @listings %>
 
 <%= link_to "Sign in with Google", "/auth/google_oauth2" %>
-<%= link_to "Make Payment", braintree_new_path %>
+

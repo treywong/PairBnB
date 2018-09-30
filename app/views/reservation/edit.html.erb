@@ -1,5 +1,5 @@
 <h1>Edit your reservation</h1>
-<%= form_for @reservation, url: reservation_update_path(@reservation) do |form| %>
+<%= form_for @reservation, url: reservation_update_path(params[:id]) do |form| %>
 	<%= render partial: '/reservation/form', object: form %>
 
 	<div class="submit-field">
