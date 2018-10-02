@@ -27,6 +27,10 @@ ActiveRecord::Schema.define(version: 2018_09_26_094743) do
 
   create_table "listings", force: :cascade do |t|
     t.string "name"
+    t.string "city"
+    t.string "state"
+    t.string "country"
+    t.string "zipcode"
     t.string "address"
     t.decimal "price"
     t.string "detail"

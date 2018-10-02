@@ -1,0 +1,11 @@
+<h1>Your search results:</h1>
+<hr>
+<% @listing.each do |list| %>
+	<a href="/listing/<%= list.id %>">
+		<h2><%= list.name %></h2>
+	</a>
+	<p>by <%= list.user.username %></p>
+	<p><%= list.detail %></p>
+<% end %>
+
+<hr>

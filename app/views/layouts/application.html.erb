@@ -10,6 +10,7 @@
     <% if signed_in? -%>
       <%= button_to t(".sign_out"), sign_out_path, method: :delete %>
       <%= link_to 'Home', root_path %> |
+      <%= link_to 'Search', search_index_path %> |
       <%= link_to 'All Listing', listing_path %> |
       <%= link_to 'Add New List', listing_new_path %> |
       <%= link_to 'Your Reservations', reservation_path %> |

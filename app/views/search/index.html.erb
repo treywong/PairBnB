@@ -1,0 +1,9 @@
+<h1>Search</h1>
+
+<%= form_for "", url: search_searching_path do |form| %>
+	<%= render partial: '/search/form', object: form %>
+
+	<div class="submit-field">
+	  <%= form.submit %>
+	</div>
+<% end %>

@@ -8,13 +8,12 @@
 
 user = {}
 user['password'] = 'asdf'
-image_box = Dir.glob("app/assets/images/*.jpg")
+
 ActiveRecord::Base.transaction do
 	20.times do
 		user['username'] = Faker::Name.name
 		user['email'] = Faker::Internet.email
 		user['role'] = ['admin','moderator','customer'].sample
-		user['image_profile'] = image_box.sample
 
 		User.create(user)
 	end
@@ -26,8 +25,14 @@ User.all.each { |u| uids << u.id }
 
 ActiveRecord::Base.transaction do
 	40.times do
-		listing['name'] = Faker::App.name
-		listing['address'] = Faker::Address.full_address
+		listing['name'] = Faker::App.unique.name
+
+		listing['city'] = Faker::Address.city
+		listing['state'] = Faker::Address.state
+		listing['country'] = Faker::Address.country
+		listing['zipcode'] = Faker::Address.zip_code
+		listing['address'] = Faker::Address.street_address
+
 		listing['price'] = Faker::Number.decimal(3,2)
 		listing['detail'] = Faker::Hipster.paragraph
 

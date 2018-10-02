@@ -38,6 +38,11 @@ Rails.application.routes.draw do
   
   post 'braintree/checkout'=> "braintree#checkout", as: "braintree_checkout"
 
+  get "/search" => "search#index", as: "search_index"
+  post "/search" => "search#searching", as: "search_searching"
+  get "/search/show" => "search#show", as: "search_show"
+
+
   get "/reservation/:id/bookings/confirm" => "bookings#confirmation", as: "bookings_confirm"
   get 'welcome/index'
   root 'welcome#index'
